@@ -1,3 +1,6 @@
 .container {
     margin-top: 40px;
 }
+.badge {
+    display: none;
+}
