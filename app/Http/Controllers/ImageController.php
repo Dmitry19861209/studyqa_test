@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ImageController extends Controller
 {
     const ERROR_UPLOAD_FILE = "Файл не загружен";
+    const IMAGES_PATH = 'public/images';
 
     /**
      * Галерея
@@ -15,7 +16,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $files = \Storage::files('images');
+        $files = \Storage::files(self::IMAGES_PATH);
+        $files = $this->changeFilePath($files);
 //        dd($files);
 
         return view('image.index', compact('files'));
@@ -45,7 +47,7 @@ class ImageController extends Controller
                 $file = $request->file('image');
                 $fileName = $file->getClientOriginalName();
                 $path = $file->storeAs(
-                    'images', $fileName
+                    self::IMAGES_PATH, $fileName
                 );
 
                 flash("Файл загружен")->success();
@@ -58,4 +60,14 @@ class ImageController extends Controller
         flash(self::ERROR_UPLOAD_FILE)->error();
         return redirect()->back();
     }
+
+    public function changeFilePath($files)
+    {
+        $result = [];
+        foreach ($files as $file) {
+            $result[] = str_replace("public", "", $file);
+        }
+        return $result;
+    }
+
 }

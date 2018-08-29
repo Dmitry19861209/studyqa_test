@@ -11,10 +11,10 @@
             @foreach($files as $file)
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                     <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                       data-image="{{ asset('storage/app/' . $file) }}?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                       data-image="{{ '/storage' . $file }}?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                        data-target="#image-gallery">
                         <img class="img-thumbnail"
-                             src="{{ asset('storage/app/' . $file) }}?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                             src="{{ asset('storage/' . $file) }}?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                              alt="Another alt text">
                     </a>
                 </div>
