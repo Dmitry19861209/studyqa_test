@@ -23,7 +23,7 @@ php artisan key:generate
 
 Настроить подключение к БД в файле .env
 
-```
+```sh
 DB_DATABASE=имя_базы
 DB_USERNAME=логин
 DB_PASSWORD=пароль
@@ -33,6 +33,12 @@ DB_PASSWORD=пароль
 
 ```sh
 php artisan migrate --seed
+```
+
+(ВАЖНО)Создать символическую ссылку, чтобы были видны изображения из хранилища:
+
+```sh
+php artisan storage:link
 ```
 
 Запуск приложения:

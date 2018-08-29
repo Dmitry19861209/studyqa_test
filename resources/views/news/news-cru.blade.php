@@ -29,7 +29,7 @@
                 <label for="Textarea1">Текст новости</label>
                 <textarea class="form-control" id="Textarea1"
                           rows="3" name="text"
-                          required>{{ $type !== 'create' ? $news->title : '' }}
+                          required>{{ $type !== 'create' ? $news->text : '' }}
                 </textarea>
             </div>
         </div>

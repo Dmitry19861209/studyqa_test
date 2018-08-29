@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\HomePage;
 use Illuminate\Database\Seeder;
 
 class HomePageSeeder extends Seeder
@@ -11,7 +12,8 @@ class HomePageSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\HomePage::create([
+        HomePage::truncate();
+        HomePage::create([
             'title' => 'Главная страница'
         ]);
     }

@@ -6,7 +6,6 @@
         <a type='button' href="{{ route('news.create') }}" class='btn btn-sm btn-success float-right'>Добавить</a>
     </h2>
 
-
     <table class="table table-striped">
         <thead>
         <tr>
