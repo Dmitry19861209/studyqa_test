@@ -41,6 +41,11 @@ php artisan migrate --seed
 php artisan storage:link
 ```
 
+Запустить тесты:
+```sh
+php vendor/phpunit/phpunit/phpunit
+```
+
 Запуск приложения:
 
 ```sh
@@ -55,11 +60,23 @@ http://127.0.0.1:8000
 
 ## Структура
 
-Структура задействованных в задании каталогов и файлов
+Структура задействованных в задании каталогов и файлов(вкратце)
 
 Каталог | Файл | Комментарий
 :--- | :---: | :---:
 routes | web.php | Маршруты/роуты.
-... | ... | ...
-...
+Http/Controllers | IndexController.php | Контроллер главной страницы
+Http/Controllers | NewsController.php | Контроллер новостей
+Http/Controllers | ImageController.php | Контроллер галереи
+Models | HomePage.php | Модель для главной
+Models | News.php | Модель для новостей
+database/migrations | * | Миграции
+database/seeds | * | Сидеры
+database/seeds | * | Сидеры
+public/css | * | стили
+public/js | * | скрипты
+public/storage | * | символическая ссылка для изображений
+public/storage | * | символическая ссылка для изображений
+resources/views | * | blade шаблоны
+tests | Unit/* | unit-тесты
 

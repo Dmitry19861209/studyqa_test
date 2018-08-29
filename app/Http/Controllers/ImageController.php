@@ -51,7 +51,7 @@ class ImageController extends Controller
                 );
 
                 flash("Файл загружен")->success();
-                return redirect()->back();
+                return redirect()->route('images.index');
             } catch (\Exception $e) {
                 flash(self::ERROR_UPLOAD_FILE)->error();
                 return redirect()->back();

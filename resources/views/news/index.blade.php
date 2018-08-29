@@ -20,8 +20,8 @@
         @foreach($news as $key => $item)
             <tr>
                 <td scope="row">{{ $item->id }}</td>
-                <td>{{ $item->category }}</td>
-                <td>{{ $item->title }}</td>
+                <td>{!! $item->category !!}</td>
+                <td>{!! $item->title !!}</td>
                 <td>{{ $item->created_at->format('d-m-Y H:i') }}</td>
                 <td>
                     <div class="btn-group">
