@@ -9,6 +9,11 @@ class IndexController extends Controller
 {
     const TITLE = "Главная страница";
 
+    /**
+     * Главная страница.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function dashboard()
     {
         $model = HomePage::first();
@@ -17,7 +22,12 @@ class IndexController extends Controller
         return view('main.dashboard', compact('title'));
     }
 
-    /* Изменить title */
+    /**
+     * Изменить title.
+     *
+     * @param Request $request
+     * @return array
+     */
     public function setTitle(Request $request)
     {
         if ($request->has('title') && ($title = $request->input('title')) !== "") {

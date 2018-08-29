@@ -8,3 +8,7 @@
     <a href="#" class="badge badge-success">Сохранено</a>
     <a href="#" class="badge badge-danger">Не сохранено</a>
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/homepage.js') }}"></script>
+@endsection

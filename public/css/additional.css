@@ -4,3 +4,10 @@
 .badge {
     display: none;
 }
+a[type=button] {
+    -webkit-appearance: none;
+}
+.btn {
+    border-radius: 0;
+    margin-right: 5px;
+}

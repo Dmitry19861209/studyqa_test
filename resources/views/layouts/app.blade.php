@@ -39,6 +39,7 @@
     </nav>
 
     <div class="container">
+        @include('flash::message')
         @yield('content')
     </div>
 
@@ -56,6 +57,13 @@
         integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl"
         crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/additional.js') }}"></script>
+
+<div class="container">
+    @yield('scripts')
+    <script>
+      $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
+</div>
+
 </body>
 </html>
